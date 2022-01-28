@@ -88,4 +88,4 @@ WORKDIR /pitivi-dev/pitivi
 # setup entry
 #
 ENTRYPOINT ["ptv-env.sh"]
-CMD ["/bin/bash"]
+CMD ["/usr/bin/ssh-agent", "/bin/bash"]
