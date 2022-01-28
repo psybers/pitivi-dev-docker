@@ -1,4 +1,4 @@
-FROM ubuntu:groovy
+FROM ubuntu:focal
 #
 RUN set -e \
 #
@@ -18,6 +18,7 @@ RUN set -e \
     flatpak-builder \
     netsurf-common \
     git \
+    openssh-client \
     gdb \
     vim \
     python3 \
