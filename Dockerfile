@@ -4,76 +4,75 @@ RUN set -e \
 #
 # Update Ubuntu repos and install dependencies
 #
-&&  apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends --yes \
-    libpulse0 \
+&& apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends --yes \
+    bison \
+    build-essential \
+    bzip2 \
     dbus-x11 \
-    frei0r-plugins \
-    gir1.2-notify \
-    gir1.2-gsound \
-    glade \
-    gstreamer1.0-libav \
-    libcanberra-gtk-module \
-    libcanberra-gtk3-module \
     flatpak \
     flatpak-builder \
-    netsurf-common \
-    git \
-    openssh-client \
+    flex \
+    frei0r-plugins \
     gdb \
-    vim \
-    python3 \
-    bzip2 \
-    build-essential \
-    patch \
-    gstreamer1.0-tools \
-    gstreamer1.0-plugins-good \
+    gettext \
+    gir1.2-gsound \
+    gir1.2-gst-plugins-bad-1.0 \
+    gir1.2-gst-plugins-base-1.0 \
+    gir1.2-notify \
+    gir1.2-peas-1.0 \
+    git \
+    glade \
+    gobject-introspection \
+    gperf \
+    gstreamer1.0-libav \
     gstreamer1.0-plugins-bad \
+    gstreamer1.0-plugins-good \
     gstreamer1.0-plugins-ugly \
     gstreamer1.0-pulseaudio \
-    python3 \
-    python3-pip \
-    ninja-build \
-    pkg-config \
-    flex \
-    bison \
-    nasm \
-    gettext \
-    gperf \
-    openssl \
+    gstreamer1.0-tools \
     libcairo2-dev \
+    libcanberra-gtk-module \
+    libcanberra-gtk3-module \
+    libgirepository1.0-dev \
+    libgstreamer-plugins-bad1.0-dev \
+    libgstreamer-plugins-base1.0-dev \
+    libgstreamer-plugins-good1.0-dev \
     libgtk-3-dev \
     libharfbuzz-dev \
     libjpeg-turbo8-dev \
     libmount-dev \
     libpeas-1.0-0 \
-    libgstreamer-plugins-bad1.0-dev \
-    libgstreamer-plugins-base1.0-dev \
-    libgstreamer-plugins-good1.0-dev \
+    libpulse0 \
     libvorbis-dev \
-    gobject-introspection \
-    libgirepository1.0-dev \
-    gir1.2-gst-plugins-bad-1.0 \
-    gir1.2-gst-plugins-base-1.0 \
-    gir1.2-peas-1.0 \
-    python3-gi-cairo \
+    nasm \
+    netsurf-common \
+    ninja-build \
+    openssh-client \
+    openssl \
+    patch \
+    pkg-config \
+    python3 \
     python3-cairo-dev \
+    python3-gi-cairo \
+    python3-pip \
+    vim \
     yaru-theme-icon \
 && pip3 install --upgrade pip \
-&& pip3 install --upgrade meson numpy matplotlib pre-commit pylint \
+&& pip3 install --upgrade matplotlib meson numpy pre-commit pylint \
 #
 # Clean-up
 #
 && rm --recursive --force \
     /usr/share/doc/* \
     /usr/share/man/* \
+    /var/cache/apt/*.bin \
     /var/cache/apt/archives/*.deb \
     /var/cache/apt/archives/partial/*.deb \
-    /var/cache/apt/*.bin \
     /var/cache/debconf/*.old \
     /var/lib/apt/lists/* \
     /var/lib/dpkg/info/* \
-    /var/log/apt \
     /var/log/*.log \
+    /var/log/apt \
 #
 # pitivi dev settings
 #
