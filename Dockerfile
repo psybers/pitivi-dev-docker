@@ -5,9 +5,9 @@ RUN set -e \
 # Update Ubuntu repos and install dependencies
 #
 && apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends --yes \
+    adwaita-icon-theme-full \
     bison \
     build-essential \
-    bzip2 \
     dbus-x11 \
     flatpak \
     flatpak-builder \
@@ -15,10 +15,10 @@ RUN set -e \
     frei0r-plugins \
     gdb \
     gettext \
-    gir1.2-gsound \
+    gir1.2-gsound-1.0 \
     gir1.2-gst-plugins-bad-1.0 \
     gir1.2-gst-plugins-base-1.0 \
-    gir1.2-notify \
+    gir1.2-notify-0.7 \
     gir1.2-peas-1.0 \
     git \
     glade \
