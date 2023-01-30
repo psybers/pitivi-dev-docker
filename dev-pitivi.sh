@@ -19,4 +19,6 @@ if [ ! "$(docker ps -q -f name=pitivi-dev)" ]; then
 else
     echo "pitivi-dev container already running as: "
     docker ps -q -f name=pitivi-dev
+    echo "re-attaching..."
+    docker attach pitivi-dev
 fi
